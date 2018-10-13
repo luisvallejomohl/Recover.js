@@ -7,19 +7,19 @@
 	<BODY>
 		<H1>Recover.js</H1>
 		<P>There are many, many, many obsolete javaScript features, such as <CODE>Number.toInteger</CODE>, <CODE>ParallelArray</CODE>, <CODE>Object.observe</CODE>, <CODE>Function.arity</CODE> and more. More features will be obsoleted in the future, such as <CODE>Object.prototype.__defineGetter__</CODE>, <CODE>Object.prototype.__proto__</CODE> and many more! To solve this problem, we have brought you Recover.js. You can recover old functionality:
+		<BR>
 		<CODE>
-			var words = [
-			 'foo',
-			 'bar',
-			 'hello,
-			 'world',
-			];
-			document.querySelector('#generateRandomWord').addEventListener('click', function(){
-			 var word = words[Number.toInteger(Math.random() * 4)];
-			 document.querySelector('.wordContainer').innerHTML = word;
-			});
+			var words = [<BR>
+			 'foo',<BR>
+			 'bar',<BR>
+			 'hello,<BR>
+			 'world',<BR>
+			];<BR>
+			 var word = words[Number.toInteger(Madoth.random() * 4)];<BR>
+			 console.log(word);<BR>
 		</CODE>
-		was once valid javaScript, but no longer is. That is no longer the case: If you install Recover.js, the code above will be vaild again!
+		<BR>
+		was once valid javaScript, but no longer is (unless you install Recover.js!) If you install Recover.js, the code above will be vaild again!
 		</P>
 		<P>You can get the current release at <A HREF="Recover.js">https://recover.js.org/Recover.js</A>, or view all releases on <A HREF="https://github.com/luisvalljomohl/Recover.js">Github</A>.</P>
 	</BODY>
