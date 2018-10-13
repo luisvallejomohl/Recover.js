@@ -25,6 +25,7 @@ Object.observe = function(obj, callback){
 	obj = new Proxy(obj, {
 		set: function(target, prop, value) {
 			console.log({ type: 'set', target, prop, value });
+			callback();
 			return Reflect.set(target, prop, value);
 		}
 	})
