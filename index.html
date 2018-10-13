@@ -10,13 +10,14 @@
 		<BR>
 		<CODE>
 			var words = [<BR>
+			 undefined,<BR>
 			 'foo',<BR>
 			 'bar',<BR>
 			 'hello,<BR>
 			 'world',<BR>
 			];<BR>
-			 var word = words[Number.toInteger(Madoth.random() * 4)];<BR>
-			 console.log(word);<BR>
+			var word = words[Number.toInteger(Math.random() * 4) + 1];<BR>
+			console.log(word + ' is a random words from an array of + String(words.__count__) + ' words.');<BR>
 		</CODE>
 		<BR>
 		was once valid javaScript, but no longer is (unless you install Recover.js!) If you install Recover.js, the code above will be vaild again!
