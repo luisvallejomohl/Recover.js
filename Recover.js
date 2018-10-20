@@ -31,9 +31,15 @@ Object.observe = function(obj, callback){
 	})
 	return obj
 }
+Object.prototype.observe = function(){
+	return Object.observe(this)
+}
 // Object.unobserve: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unobserve
 Object.unobserve = function(obj){
 	return obj.self
+}
+Object.prototype.unobserve = function(){
+	return Object.unobserve(this)
 }
 
 /*******************************************************************************************************************************
