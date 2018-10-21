@@ -73,7 +73,7 @@ Number properties and methods
 
 // Number.toInteger: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toInteger
 Number.toInteger = function(n){
-	if(((typeof n == Number) && isNaN(n)) || n === null || n === undefined || n === false){
+	if(!n){
 		return 0
 	}else if(n === true){
 		return 1
