@@ -9,12 +9,14 @@ Object properties and methods
 // Object.prototype.__count__: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count
 Object.prototype.__defineGetter__('__count__', function(){
 	var count = 0;
-	(this.constructor == Array)
-		? for(var item = 0; item < this.length; item++){
+	if(this.constructor == Array){
+		for(var item = 0; item < this.length; item++){
 			if((typeof this[item]) != 'undefined')
 				count++;
 		}
-		: return Object.keys(this).length;	
+	}else{
+		return Object.keys(this).length
+	}
 	return count
 })
 
