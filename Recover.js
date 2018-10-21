@@ -54,7 +54,9 @@ Function properties and methods
 Function.arity = function(unction){
 	return unction.length;
 }
-Function.prototype.arity = Function.prototype.length
+Function.prototype.__defineGetter__('arity', function(){
+	return this.length;
+})
 /*******************************************************************************************************************************
 Array properties and methods
 *******************************************************************************************************************************/
