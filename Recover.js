@@ -9,10 +9,12 @@ Object properties and methods
 // Object.prototype.__count__: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count
 Object.prototype.__defineGetter__('__count__', function(){
 	var count = 0;
-	for(var item = 0; item < this.length; item++){
-		if((typeof this[item]) != 'undefined')
-			count++;
-	}
+	(this.constructor == Array)
+		? for(var item = 0; item < this.length; item++){
+			if((typeof this[item]) != 'undefined')
+				count++;
+		}
+		: return Object.keys(this).length;	
 	return count
 })
 
@@ -50,9 +52,7 @@ Function properties and methods
 Function.arity = function(unction){
 	return unction.length;
 }
-Function.prototype.__defineGetter__('arity', function(){
-	return this.length
-})
+Function.prototype.arity = Function.prototype.length
 /*******************************************************************************************************************************
 Array properties and methods
 *******************************************************************************************************************************/
@@ -69,7 +69,7 @@ Number properties and methods
 
 // Number.toInteger: See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toInteger
 Number.toInteger = function(n){
-	if(n === NaN || n === null || n === undefined || n === false){
+	if(((typeof n == Number) && isNaN(n)) || n === null || n === undefined || n === false){
 		return 0
 	}else if(n === true){
 		return 1
